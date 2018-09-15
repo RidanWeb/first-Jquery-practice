@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JQuery practice</title>
+	<style>
+		.g, .h{
+			padding: 8px;
+			text-align: center;
+			background: #ff0000;
+			color: #ffffff;
+			font-size: 30px;
+		}
+		.h{
+			background: #dddddd;
+			padding: 100px;
+			color: #000000;
+			display: none;
+		}
+	.odd{
+	    background: orange;
+	    padding: 10px;
+	}
+	.even{
+	    background: skyblue;
+	    padding: 10px;
+	}
+
+	.first{
+	    background: #b2dba1;
+	    padding: 10px;
+	}
+	.last{
+	    background: #f2dede;
+	    padding: 10px;
+	}
+	.nth{
+	    background: maroon;
+	    color: oldlace;
+	    padding: 10px;
+	}
+
+
+
+	</style>
+</head>
+<body>
+	
+	<button id="a">alert button</button>
+	<h1 id="b">click me for hide...</h1>
+	<h1 class="c">click me for fadeOut...</h1>
+	<h1 class="d">click me for fadeTo...</h1>
+	<h1 class="e">click the fadeToggle button for fadeToggle me...</h1>
+	<button id="e">fadeToggle</button>
+	<h1 id="f">click the fadeIn and out button for fadeIn and out me...</h1>
+	<button id="f-2">fadeIn and fadeOut</button><br><br>
+	<div class="g">click me for slid</div>
+	<div class="h">Wel-done</div><br>
+	<button class="i">click me for add class</button><br><br>
+	<span>Home</span>
+	<span>Service</span>
+	<span>Blog</span>
+	<span>Contact</span>
+	<span>SignIn</span><br><br>
+	<div class="j">click the toggle button for toggle me</div><br>
+	<button class="k">toggle</button>
+<!-- 	<h1>This is Rifat</h1>
+	<h2>This is Rahat</h2>
+	<h3>This is Ridoy</h3>
+	<h4>This is Momo</h4>
+	<h5>This is Eva</h5>
+	<h6>This is You</h6> -->
+	<p>This is Rifat</p>
+	<p>This is Rahat<p/>
+	<p>This is Eva</p>
+	<p>This is Ridoy</p>
+	<p>This is Momo</p>
+	<p>This is You</p>
+
+
+
+	
+	<script src="jquery-3.3.1.min.js"></script>
+
+	<script>
+		$(document).ready(function(){
+			$("#a").click(function(){
+				alert("welcome");
+			});
+
+			$("#b").click(function(){
+				$("#b").hide("2000");
+			});
+			$(".c").click(function(){
+				$(this).fadeOut(500);
+			});
+			$(".d").click(function(){
+				$(".d").fadeTo(1000,0.4);
+			});
+			$("#e").mouseover(function(){
+				$(".e").fadeToggle(2000);
+			});
+			$("#f-2").click(function(){
+				$("#f").fadeIn(2000);
+			});
+			$("#f-2").click(function(){
+				$("#f").fadeOut(2000);
+			});
+			$(".g").click(function(){
+				$(".h").slideToggle(500);
+			});
+
+			$(".i").click(function(){
+				$("span:odd").addClass("odd");
+				$("span:even").addClass("even");
+				$("span:first").addClass("first");
+				$("span:last").addClass("last");
+				$("span:eq(3)").addClass("nth");
+			});
+			// $(":header").fadeOut(3000);
+			$("p:not(p:eq(5))").fadeOut(5000);
+			$(".k").click(function(){
+				$(".j").toggle(5000);
+			});
+		});
+	</script>
+</body>
+</html>
